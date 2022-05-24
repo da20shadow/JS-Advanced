@@ -1,7 +1,9 @@
 //Task 9 - Words Uppercase
 function uppercaseWords(string){
     let arr = string.match(/\w+/g);
+
     let upperArr =[];
+
     for (const word of arr) {
         upperArr.push(word.toUpperCase());
     }
