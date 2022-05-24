@@ -96,3 +96,18 @@ function sameNumbersSecondSolution(number){
     console.log(areSame);
     console.log(sum);
 }
+
+//Task 4 - Previous Day
+function calculateThePreviousDay(y,m,d) {
+    let theDate = new Date(`${y}-${m}-${d}`);
+
+    theDate.setDate(theDate.getDate() - 1);
+
+    let year = theDate.getFullYear();
+    let month = theDate.getMonth() + 1;
+    let day = theDate.getDate();
+
+    console.log(`${year}-${month}-${day}`);
+}
+
+//Task 5 - 
