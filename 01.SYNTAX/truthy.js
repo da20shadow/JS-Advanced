@@ -10,7 +10,7 @@ console.log(Boolean(NaN));
 console.log(Boolean(0));
 console.log(Boolean(0n));
 
-console.log("All bellow is true");
+console.log("All below is true");
 
 console.log(Boolean(4))
 console.log(Boolean({}))
