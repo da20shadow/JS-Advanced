@@ -109,5 +109,3 @@ function calculateThePreviousDay(y,m,d) {
 
     console.log(`${year}-${month}-${day}`);
 }
-
-//Task 5 - 
