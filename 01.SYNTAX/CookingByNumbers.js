@@ -41,3 +41,22 @@ function CookingByNumbers(number,firstOperation, secondOperation,
 }
 CookingByNumbers('9', 'dice', 'spice',
     'chop', 'bake','fillet');
+
+function secondSolution(number,...operationsList){
+    number = Number(number);
+    const operations = operationsList;
+    const arr = [];
+    const commander = {
+        chop() {number /= 2; arr.push(number);},
+        dice(){number = Math.sqrt(number); arr.push(number);},
+        spice() {number++; arr.push(number)},
+        bake() {number *= 3; arr.push(number)},
+        fillet() {number = number - (number * 0.20); arr.push(number)},
+        default(){/* ... */}
+    }
+
+    operations.forEach(op => commander[op] ? commander[op]() : commander.default());
+
+    arr.forEach(el => console.log(el))
+}
+secondSolution(9,'dice','spice','chop','bake','fillet')
