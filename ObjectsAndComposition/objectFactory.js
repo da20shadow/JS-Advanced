@@ -1,6 +1,7 @@
 function objectFactory(lib, ordersList) {
     return ordersList.map(order => {
-        const object = Object.assign({}, order.template);
+        const object = {}
+        Object.assign(object, order.template);
 
         for (const part of order.parts) {
             object[part] = lib[part];
