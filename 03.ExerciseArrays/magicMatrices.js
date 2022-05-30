@@ -1,32 +1,6 @@
 function magicMatrices(matrix){
-
-    const lenMatrix = matrix.length - 1;
-    let isMagic = true;
-    for (let row = 0; row < lenMatrix; row++) {
-
-        let sumOfFirstRow = matrix[row].reduce((a,b) => a + b,0);
-        let sumOfSecondRow = matrix[row + 1].reduce((a,b) => a + b);
-        let firstColSum = 0;
-        let secondColSum = 0;
-
-        const colsLen = matrix[row].length;
-        for (let col = 0; col < colsLen; col++) {
-            firstColSum += matrix[row][col];
-            secondColSum += matrix[row + 1][col];
-        }
-
-        if (sumOfFirstRow !== sumOfSecondRow || firstColSum !== secondColSum){
-            isMagic = false;
-            break;
-        }
-    }
-//TODO 83/100 да видя къде бъркам. Задачата в видеото е на 1:19:40
-    console.log(isMagic)
-}
-
-function secondSolution(arr) {
-    let sumRow = arr.map((col => col.reduce((a, b) => a + b)));
-    let sumCol = arr.reduce((r, a) => r.map((b, i) => a[i] + b));
+    let sumRow = matrix.map((col => col.reduce((a, b) => a + b)));
+    let sumCol = matrix.reduce((r, a) => r.map((b, i) => a[i] + b));
 
     let areEqual = array => array.every(v => v === array[0]);
 
