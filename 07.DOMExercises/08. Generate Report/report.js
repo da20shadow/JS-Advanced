@@ -32,3 +32,5 @@ function generateReport() {
     //Convert the array with the objects to JSON string
     output.value = JSON.stringify(result);
 }
+
+let p = document.createElement('p');
