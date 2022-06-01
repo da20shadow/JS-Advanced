@@ -1,6 +1,5 @@
 function solve() {
    let products = Array.from(document.querySelectorAll('.add-product'));
-    //TODO: to find why juge gives me 0/100 I asked the support!
    let totalPrice = 0;
    let productsList = {};
 
@@ -28,7 +27,7 @@ function solve() {
     function processOrder(){
         let textArea = document.querySelector('textarea');
         let productsNames = Object.keys(productsList);
-        let textToAdd = `You bought ${productsNames.join(', ')} for ${totalPrice.toFixed(2)}`;
+        let textToAdd = `You bought ${productsNames.join(', ')} for ${totalPrice.toFixed(2)}.`;
         textArea.value += textToAdd;
 
         let allButtons = Array.from(document.querySelectorAll('button'));

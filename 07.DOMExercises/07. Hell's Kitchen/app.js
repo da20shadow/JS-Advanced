@@ -45,13 +45,10 @@ function solve() {
       let topSalary =(bestRestaurantWorkers[0][1]).toFixed(2);
 
       document.querySelector('#bestRestaurant p')
-          .textContent = `Name: ${bestRestaurantName} Average Salary: ${bestAvgSalary} Best Salary: ${topSalary}`;
+          .textContent = `Name: ${bestRestaurantName} Average Salary: ${bestAvgSalary.toFixed(2)} Best Salary: ${topSalary}`;
 
       document.querySelector('#workers p')
           .textContent = `${bestRestaurantWorkers.map(w => 'Name: ' + w[0] + ' With Salary: ' + w[1]).join(' ')}`;
-
-      //TODO: на джъджа не му харесва тва решение да видя дали ми са отговорили по имейла
-      // и да я реша в момента е на 44/100 точки
    }
 }
 
