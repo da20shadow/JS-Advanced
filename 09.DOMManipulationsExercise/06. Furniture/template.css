@@ -3,6 +3,76 @@ body{
   text-align: center;
 }
 
+@keyframes animation {
+  0% {opacity: 5%; font-size:20px; padding: 10px;}
+  10% {opacity: 10%; font-size:25px; padding: 20px;}
+  15% {opacity: 15%; font-size:30px; padding: 30px;}
+  20% {opacity: 20%; font-size:35px; padding: 40px;}
+  25% {opacity: 25%; font-size:40px; padding: 50px}
+  30% {opacity: 30%; font-size:45px; padding: 60px}
+  35% {opacity: 35%; font-size:50px; padding: 70px}
+  40% {opacity: 40%; font-size:55px; padding: 80px}
+  45% {opacity: 45%; font-size:65px; padding: 90px}
+  50% {opacity: 50%; font-size:70px; padding: 100px}
+  55% {opacity: 55%; font-size:75px; padding: 110px}
+  60% {opacity: 60%; font-size:80px; padding: 100px}
+  65% {opacity: 65%; font-size:85px; padding: 90px}
+  70% {opacity: 70%; font-size:90px; padding: 80px}
+  75% {opacity: 75%; font-size:95px; padding: 70px}
+  80% {opacity: 80%; font-size:90px; padding: 60px}
+  85% {opacity: 85%; font-size:85px; padding: 50px}
+  90% {opacity: 90%; font-size:80px; padding: 40px}
+  95% {opacity: 95%; font-size:75px; padding: 25px}
+  100% {opacity: 100%; font-size:70px; padding: 10px}
+}
+
+#counter{
+  color: lightblue;
+  margin: 30px auto;
+  max-width: 25%;
+  border: 5px solid lightblue;
+  border-radius: 50%;
+  box-shadow: 1px 1px 20px 3px;
+  text-decoration: none;
+  font-size: 165px;
+  font-weight: 900;
+  font-family: "Cambria Math",sans-serif;
+}
+
+#message {
+  color: lightcoral;
+  display: none;
+  margin: 50px auto;
+  max-width: 80%;
+  border: 5px solid lightpink;
+  box-shadow: 1px 1px 20px 3px;
+  text-decoration: none;
+  font-size: 65px;
+  font-weight: 900;
+  font-family: "Cambria Math",sans-serif;
+  animation-name: animation;
+  animation-duration: 2s;
+}
+
+#margin{
+  background: #0E1119;
+  padding: 50px;
+  border: 3px solid lightcyan;
+}
+#margin button {
+  outline: none;
+  color: lightcoral;
+  padding: 5px 50px;
+  font-size: 35px;
+  font-weight: 900;
+  border: 5px solid lightcoral;
+  border-radius: 9px;
+}
+#margin button:hover {
+  box-shadow: 1px 1px 20px 1px;
+
+}
+
 #exercise {
 display: inline-block;
 padding: 1rem 0 1rem 1rem;
