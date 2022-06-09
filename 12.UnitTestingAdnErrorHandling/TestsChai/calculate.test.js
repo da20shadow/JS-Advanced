@@ -3,36 +3,24 @@ const calculateTest = require('./calculate');
 
 describe('Test The Calculator with different operators + - *', () => {
 
-    it('Should return sum 40 when operator is + and both numbers 20' , () => {
+    it('should return false when check if the result is not a number', function () {
+        assert.equal(isNaN(calculateTest(5,'*',9)),false);
+    });
 
-        //Arrange
-        let firstNumber = 20;
-        let operator = '+';
-        let secondNumber = 20;
-        let expectedSum = 40;
+    it('should return false when check if the result is not a number', function () {
+        assert.equal(isNaN(calculateTest('5','*','sd')),true);
+    });
 
-        //Act
-        let actualSum = calculateTest(firstNumber, operator, secondNumber);
-
-        //Assert
-        assert.equal(actualSum, expectedSum);
-
+    it('Should return sum correct sum' , () => {
+        assert.equal(calculateTest(20, "+", 30), 50);
+        assert.equal(calculateTest(-20, "+", -20), -40);
+        assert.equal(calculateTest(20, "+", -20), 0);
     })
 
-    it('Return sum 0 when subtract 2 equals numbers' , () => {
-
-        //Arrange
-        let firstNumber = 20;
-        let operator = '-';
-        let secondNumber = 20;
-        let expectedSum = 0;
-
-        //Act
-        let actualSum = calculateTest(firstNumber, operator, secondNumber);
-
-        //Assert
-        assert.equal(actualSum, expectedSum);
-
+    it('Should Return correct sum when subtract 2 numbers' , () => {
+        assert.equal(calculateTest(30, "-", 20), 10);
+        assert.equal(calculateTest(30, "-", -20), 50);
+        assert.equal(calculateTest(-30, "-", -20), -10);
     })
 
     it('Should return sum -15 when subtract -20 + 5' , () => {
