@@ -5,7 +5,7 @@ class Company{
 
     addEmployee(name,salary,position,department){
 
-        if (name.trim() === ''){
+        if (name.trim() === '' || !name || !salary || !position || !department){
             throw new Error('Invalid input!');
         }
         if (salary < 0){
