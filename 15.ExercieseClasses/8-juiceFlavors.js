@@ -17,18 +17,30 @@ function juiceFlavors(fruits){
         if (fruitsMap.get(fruit) >= 1000){
             let currentQuantity = fruitsMap.get(fruit);
 
-            while(currentQuantity >= 1000){
+            let numOfBottles = Math.trunc(currentQuantity / 1000);
+            let remains = currentQuantity % 1000;
 
-                currentQuantity -= 1000;
-
-                if (!bottles.has(fruit)){
-                    bottles.set(fruit,1)
-                }else{
-                    let currentBottles = bottles.get(fruit);
-                    bottles.set(fruit,currentBottles + 1);
-                }
+            if (!bottles.has(fruit)){
+                bottles.set(fruit,numOfBottles)
+            }else{
+                let currentBottles = bottles.get(fruit);
+                bottles.set(fruit,currentBottles + numOfBottles);
             }
-            fruitsMap.set(fruit,currentQuantity);
+
+            fruitsMap.set(fruit,remains);
+
+            // while(currentQuantity >= 1000){
+            //
+            //     currentQuantity -= 1000;
+            //
+            //     if (!bottles.has(fruit)){
+            //         bottles.set(fruit,1)
+            //     }else{
+            //         let currentBottles = bottles.get(fruit);
+            //         bottles.set(fruit,currentBottles + 1);
+            //     }
+            // }
+            // fruitsMap.set(fruit,currentQuantity);
         }
 
     })
