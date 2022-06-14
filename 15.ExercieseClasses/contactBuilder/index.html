@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contacts Builder</title>
+</head>
+
+<body>
+    <div id="main">
+        <article>
+            <div class="title">{firstName lastName}<button>&#8505;</button></div>
+            <div class="info">
+                <span>&phone; {phone}</span>
+                <span>&#9993; {email}</span>
+            </div>
+        </article>
+    </div>
+    <button type="button" onclick="showContacts(this)">Click to show</button>
+    <script src="10-contactsBuilder.js"></script>
+    <script>
+
+        let contacts = [
+            new Contact("Ivan", "Ivanov", "0888 123 456", "i.ivanov@gmail.com"),
+            new Contact("Maria", "Petrova", "0899 987 654", "mar4eto@abv.bg"),
+            new Contact("Jordan", "Kirov", "0988 456 789", "jordk@gmail.com")
+        ];
+
+        let interval;
+        let time = 2000;
+        function showContacts(e){
+            e.remove();
+            // After 2 second, change the online status to true
+            interval = setInterval(setOnline,time);
+
+        }
+
+        let limit = contacts.length;
+        let stopWhen = 0;
+
+        function setOnline(){
+            console.log('Comes to set them online')
+            contacts[stopWhen].online = true;
+            contacts[stopWhen].render('main')
+            stopWhen++;
+            console.log('Stop when is: ', stopWhen)
+            console.log('Limit is: ', limit)
+            if (stopWhen === limit){
+                clearInterval(interval);
+            }
+            time += 500;
+        }
+
+
+    </script>
+</body>
+
+</html>
