@@ -1,6 +1,5 @@
 let {Repository} = require("./solution.js");
 const {expect} = require('chai');
-//TODO not works gives me 90/100
 describe('Repository', function () {
 
     let repository = null;
